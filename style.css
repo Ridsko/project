@@ -1,0 +1,73 @@
+:root {
+    --font-family: monospace;
+    --primary-color: 106, 182, 153;
+    --secondary-color: 40, 135, 200;
+}
+
+*::before, *, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+} 
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* meestal 10px */
+    font-family: monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+
+}
+.body {
+    display: grid;
+    /*place-content: center;*/
+    justify-content: center;
+    align-content: start;
+    margin-top: 5rem;
+    min-height: 100vh;
+    
+}
+.container--inloggen {
+    display: grid;
+    grid-template-columns: 35rem;
+    grid-row-gap: 5rem;
+}
+
+.item {
+    
+}
+.item--text {
+    text-align: center;
+    
+}
+.header--h1 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.item--fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2.5rem;
+    
+}
+.text, .button {
+    padding: 1rem .5rem;
+    border: .3rem solid black;
+    border-radius: 1rem;
+}
+
+
+.item--buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2.5rem;
+}
+
+.button--inloggen {
+    grid-column: span 2;
+}
+.link {
+    justify-self: center;
+}
