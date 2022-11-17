@@ -1,3 +1,17 @@
+<?php
+
+
+function JSC($input){
+    echo "<pre>";
+    print_r($input);
+    echo "</pre>";
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,13 +31,13 @@
                 <h1 class="header header--h1">Inloggen bedrijven</h1>
             </div>
             <div class="item item--fields">
-                <input type="text" name="uname" class="text text--name" placeholder="Gebruikersnaam">
-                <input type="password" name="password" class="text text--password" placeholder="Wachtwoord">
+                <input type="text" class="text text--name" name="uname" placeholder="username">
+                <input type="password" class="text text--password" name="password" placeholder="password">
             </div>
             <div class="item item--buttons">
                 <button class="button button--inloggen">Inloggen</button>
                 <a href="register.php" class="link link--sign-up">Sign Up</a>
-                <a href="vergeten.php" class="link link--wachtwoord-vergeten">Wachtwoord vergeten</a>
+                <a href="#" class="link link--wachtwoord-vergeten">Wachtwoord vergeten</a>
             </div>
         </form>
     </body>
