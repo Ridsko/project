@@ -25,7 +25,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 grid-template-rows: 10rem 1fr 10rem;
                 grid-row-gap: 2rem;
             }
-
+            
             .add-question_type {
                 grid-column: 6 / span 1;
                 place-self: start center;
@@ -99,33 +99,36 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     
                 </div>
                 <button class="button button--add" type="button">Add Option</button>
-                <button class="button button--remove" type="button">Remove Question</button>
+                <button class="button button--remove" id="removeoption" type="button">Remove Option</button>
                 <div class="input--required">
                     <p class="paragraph">Verplicht</p>
                     <input class="input input--checkbox" type="checkbox"> 
                 </div>
             </div>
         </div>
-        <button class="button button--add-question" id="newq">Nieuwe vraag</button>
+        <button class="button button--add-question">Nieuwe vraag</button>
         <script>
+            'use strict';
 //            const answerOptions = new Map();
             const maxAnswerOptionsPerQuestion = 4;
+            let optionCounter = 0;
             const answerOptionsPerQuestion = [];
             const answerOptionMC = `
                 <div class="add-question_answer-option">
                     <input type="checkbox">
                     <input type="text" class="text text--answer" placeholder="antwoordoptie...">
-                    <image src="./bin.png" class="image image--remove">
                 </div>
             `; 
             document.querySelector('button').addEventListener('click', function(){
-               if(true)
-               document.querySelector('.add-question_answers').insertAdjacentHTML('beforeend', answerOptionMC); 
+               if(optionCounter < maxAnswerOptionsPerQuestion){
+               optionCounter++;
+               document.querySelector('.add-question_answers').insertAdjacentHTML('beforeend', answerOptionMC); }
             });
-
-            document.querySelector('#newq').addEventListener('click', function(){console.log("1")});
-
-            'use strict';
+            document.getElementById('removeoption').addEventListener('click',function(){
+                optionCounter--
+                let element = document.querySelector('.add-question_answer-option');
+                element.remove();
+            });
             /* TO DO */
             /*
              * Add Eventlisteners to respective buttons 
@@ -134,7 +137,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
              * Max answer options per question
              * Save temp (JS) / save to DB (PHP/SQL)
              * Make questionaire (not just a list of questions)
-             * Media Queries (responsive)
+             * Media Queries (resonsive)
              * Clean up code (CSS, JS), clean up structure (files, dirs), cleanup abs versus relative paths (e.g. DIR PHP), push GitHub.
              * 
              */

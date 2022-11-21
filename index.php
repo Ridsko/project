@@ -37,7 +37,7 @@ function JSC($input){
             <div class="item item--buttons">
                 <button class="button button--inloggen">Inloggen</button>
                 <a href="register.php" class="link link--sign-up">Sign Up</a>
-                <a href="#" class="link link--wachtwoord-vergeten">Wachtwoord vergeten</a>
+                <a href="vergeten.php" class="link link--wachtwoord-vergeten">Wachtwoord vergeten</a>
             </div>
         </form>
     </body>
