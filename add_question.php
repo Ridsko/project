@@ -125,10 +125,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                document.querySelector('.add-question_answers').insertAdjacentHTML('beforeend', answerOptionMC); }
             });
             document.getElementById('removeoption').addEventListener('click',function(){
-                if(optionCounter != optionCounter)
+                if(optionCounter != 0){
                 optionCounter--
                 let element = document.querySelector('.add-question_answer-option');
                 element.remove();
+                console.log(optionCounter);
+                }
             });
             /* TO DO */
             /*
